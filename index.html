@@ -1,494 +1,1223 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Prof. Dr. Maurício Moreira dos Santos | Pesquisa</title>
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+  <title>
+    Prof. Dr. Maurício Moreira dos Santos | Pesquisa
+  </title>
+
 
   <style>
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
 
+
     html {
       scroll-behavior: smooth;
     }
 
+
     body {
+
       font-family: Arial, Helvetica, sans-serif;
+
       color: #24333d;
+
       background: #f7f9fa;
+
       line-height: 1.6;
+
     }
+
+
+    /* =========================
+       CABEÇALHO
+       ========================= */
 
     header {
+
       background: #173b4d;
+
       color: white;
+
       padding: 18px 8%;
+
       position: sticky;
+
       top: 0;
+
       z-index: 1000;
+
       box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+
     }
+
 
     nav {
+
       max-width: 1200px;
+
       margin: auto;
+
       display: flex;
+
       justify-content: space-between;
+
       align-items: center;
+
       gap: 30px;
+
     }
+
 
     .logo {
+
       font-size: 1.1rem;
+
       font-weight: bold;
+
+      white-space: nowrap;
+
     }
+
 
     nav ul {
+
       display: flex;
+
       list-style: none;
+
       gap: 25px;
+
     }
+
 
     nav a {
+
       color: white;
+
       text-decoration: none;
+
       font-size: 0.95rem;
+
+      transition: 0.2s;
+
     }
+
 
     nav a:hover {
+
       color: #9ed8c5;
+
     }
+
+
+
+    /* =========================
+       ABERTURA
+       ========================= */
 
     .hero {
+
       min-height: 76vh;
+
       display: flex;
+
       align-items: center;
-      background:
-        linear-gradient(120deg, rgba(19,58,77,0.96), rgba(25,99,91,0.86)),
-        linear-gradient(45deg, #193b4e, #2a7569);
+
       color: white;
-      padding: 80px 8%;
+
+      padding: 75px 8%;
+
+      background:
+        linear-gradient(
+          120deg,
+          rgba(19,58,77,0.98),
+          rgba(25,99,91,0.90)
+        );
+
     }
+
 
     .hero-content {
-      max-width: 1050px;
+
+      max-width: 1200px;
+
       margin: auto;
+
       width: 100%;
+
+      display: grid;
+
+      grid-template-columns:
+        minmax(0, 1.7fr)
+        minmax(280px, 0.7fr);
+
+      gap: 60px;
+
+      align-items: center;
+
     }
+
+
+    .hero-text {
+
+      min-width: 0;
+
+    }
+
 
     .hero-tag {
+
       display: inline-block;
+
       background: rgba(255,255,255,0.12);
-      border: 1px solid rgba(255,255,255,0.25);
+
+      border:
+        1px solid rgba(255,255,255,0.25);
+
       padding: 7px 14px;
+
       border-radius: 30px;
+
       margin-bottom: 25px;
+
       font-size: 0.9rem;
+
     }
+
 
     .hero h1 {
-      font-size: 3.2rem;
+
+      font-size: 3.1rem;
+
       line-height: 1.1;
+
       margin-bottom: 20px;
+
       max-width: 850px;
+
     }
+
 
     .hero h2 {
-      font-size: 1.35rem;
+
+      font-size: 1.3rem;
+
       font-weight: normal;
+
       color: #dbece7;
+
       margin-bottom: 25px;
+
     }
+
 
     .hero p {
-      font-size: 1.12rem;
+
+      font-size: 1.08rem;
+
       max-width: 760px;
+
       color: #edf5f2;
+
       margin-bottom: 32px;
+
     }
+
+
+    .hero-photo {
+
+      display: flex;
+
+      justify-content: center;
+
+      align-items: center;
+
+    }
+
+
+    .hero-photo img {
+
+      width: 100%;
+
+      max-width: 335px;
+
+      height: auto;
+
+      display: block;
+
+      border-radius: 16px;
+
+      border:
+        1px solid rgba(255,255,255,0.28);
+
+      box-shadow:
+        0 18px 45px rgba(0,0,0,0.30);
+
+    }
+
+
+    /* =========================
+       BOTÕES
+       ========================= */
 
     .button {
+
       display: inline-block;
-      background: #ffffff;
+
+      background: white;
+
       color: #174c4c;
+
       padding: 12px 22px;
+
       border-radius: 6px;
+
       text-decoration: none;
+
       font-weight: bold;
+
       margin-right: 10px;
+
       margin-bottom: 10px;
+
+      transition: 0.2s;
+
     }
+
+
+    .button:hover {
+
+      transform: translateY(-2px);
+
+    }
+
 
     .button.secondary {
+
       background: transparent;
+
       color: white;
-      border: 1px solid rgba(255,255,255,0.6);
+
+      border:
+        1px solid rgba(255,255,255,0.6);
+
     }
+
+
+
+    /* =========================
+       SEÇÕES
+       ========================= */
 
     section {
+
       padding: 75px 8%;
+
     }
+
 
     .container {
+
       max-width: 1100px;
+
       margin: auto;
+
     }
+
 
     .section-title {
+
       font-size: 2rem;
+
       color: #173b4d;
+
       margin-bottom: 12px;
+
     }
+
 
     .section-subtitle {
+
       color: #687a84;
+
       margin-bottom: 38px;
+
       max-width: 760px;
+
     }
+
+
+
+    /* =========================
+       SOBRE
+       ========================= */
 
     .about {
+
       background: white;
+
     }
+
 
     .about p {
+
       max-width: 900px;
+
       font-size: 1.05rem;
+
       margin-bottom: 18px;
+
     }
+
 
     .research-areas {
+
       display: flex;
+
       flex-wrap: wrap;
+
       gap: 10px;
+
       margin-top: 25px;
+
     }
+
 
     .tag {
+
       background: #e5f1ed;
+
       color: #235c56;
+
       padding: 8px 14px;
+
       border-radius: 25px;
+
       font-size: 0.9rem;
+
     }
+
+
+
+    /* =========================
+       PROJETOS
+       ========================= */
 
     .projects {
+
       background: #f4f7f8;
+
     }
+
 
     .project-grid {
+
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+      grid-template-columns:
+        repeat(auto-fit, minmax(300px, 1fr));
+
       gap: 25px;
+
     }
+
 
     .card {
+
       background: white;
+
       border-radius: 10px;
+
       padding: 28px;
-      box-shadow: 0 5px 18px rgba(0,0,0,0.07);
-      border-top: 4px solid #34796f;
+
+      box-shadow:
+        0 5px 18px rgba(0,0,0,0.07);
+
+      border-top:
+        4px solid #34796f;
+
       transition: 0.25s;
+
     }
+
 
     .card:hover {
+
       transform: translateY(-4px);
-      box-shadow: 0 8px 24px rgba(0,0,0,0.10);
+
+      box-shadow:
+        0 8px 24px rgba(0,0,0,0.10);
+
     }
+
 
     .card-status {
+
       display: inline-block;
+
       color: #34796f;
+
       font-size: 0.82rem;
+
       font-weight: bold;
+
       text-transform: uppercase;
+
       margin-bottom: 12px;
+
     }
+
 
     .card h3 {
+
       color: #173b4d;
+
       margin-bottom: 12px;
+
       line-height: 1.35;
+
     }
+
 
     .card p {
+
       color: #596a73;
+
       font-size: 0.96rem;
+
       margin-bottom: 12px;
+
     }
+
+
+
+    /* =========================
+       INSTITUIÇÕES
+       ========================= */
 
     .institution {
+
       background: white;
+
     }
+
 
     .institution-box {
-      border-left: 4px solid #34796f;
-      padding: 5px 0 5px 25px;
+
+      border-left:
+        4px solid #34796f;
+
+      padding:
+        5px 0 5px 25px;
+
     }
+
+
+    .institution-box p {
+
+      margin-bottom: 12px;
+
+    }
+
+
+
+    /* =========================
+       CONTATO
+       ========================= */
 
     .contact {
+
       background: #173b4d;
+
       color: white;
+
     }
+
 
     .contact .section-title {
+
       color: white;
+
     }
+
 
     .contact .section-subtitle {
+
       color: #cbdade;
+
     }
+
+
+    .contact p {
+
+      margin-bottom: 8px;
+
+    }
+
+
+
+    /* =========================
+       RODAPÉ
+       ========================= */
 
     footer {
+
       background: #102d3b;
+
       color: #cad5da;
+
       text-align: center;
+
       padding: 22px;
+
       font-size: 0.9rem;
+
     }
 
-    @media (max-width: 750px) {
-      nav {
-        flex-direction: column;
-        gap: 10px;
+
+
+    /* =========================
+       RESPONSIVIDADE
+       ========================= */
+
+    @media (max-width: 900px) {
+
+      .hero-content {
+
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+
       }
 
-      nav ul {
-        gap: 14px;
-        flex-wrap: wrap;
-        justify-content: center;
+
+      .hero-photo {
+
+        order: 2;
+
       }
+
+
+      .hero-photo img {
+
+        max-width: 300px;
+
+      }
+
 
       .hero h1 {
-        font-size: 2.2rem;
+
+        font-size: 2.5rem;
+
       }
+
+    }
+
+
+    @media (max-width: 750px) {
+
+      header {
+
+        padding:
+          15px 5%;
+
+      }
+
+
+      nav {
+
+        flex-direction: column;
+
+        gap: 12px;
+
+      }
+
+
+      nav ul {
+
+        gap: 14px;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+      }
+
+
+      .logo {
+
+        white-space: normal;
+
+        text-align: center;
+
+      }
+
+
+      .hero {
+
+        padding:
+          55px 6%;
+
+      }
+
+
+      .hero h1 {
+
+        font-size: 2.15rem;
+
+      }
+
 
       .hero h2 {
+
         font-size: 1.1rem;
+
       }
 
-      section {
-        padding: 55px 6%;
+
+      .hero p {
+
+        font-size: 1rem;
+
       }
+
+
+      section {
+
+        padding:
+          55px 6%;
+
+      }
+
+
+      .project-grid {
+
+        grid-template-columns: 1fr;
+
+      }
+
     }
+
   </style>
+
 </head>
+
 
 <body>
 
-<header>
-  <nav>
-    <div class="logo">Maurício Moreira dos Santos</div>
 
-    <ul>
-      <li><a href="#inicio">Início</a></li>
-      <li><a href="#sobre">Sobre</a></li>
-      <li><a href="#projetos">Projetos</a></li>
-      <li><a href="#instituicoes">Parcerias</a></li>
-      <li><a href="#contato">Contato</a></li>
-    </ul>
-  </nav>
-</header>
+  <!-- =========================
+       CABEÇALHO
+       ========================= -->
+
+  <header>
+
+    <nav>
+
+      <div class="logo">
+        Maurício Moreira dos Santos
+      </div>
+
+      <ul>
+
+        <li>
+          <a href="#inicio">
+            Início
+          </a>
+        </li>
+
+        <li>
+          <a href="#sobre">
+            Sobre
+          </a>
+        </li>
+
+        <li>
+          <a href="#projetos">
+            Projetos
+          </a>
+        </li>
+
+        <li>
+          <a href="#instituicoes">
+            Parcerias
+          </a>
+        </li>
+
+        <li>
+          <a href="#contato">
+            Contato
+          </a>
+        </li>
+
+      </ul>
+
+    </nav>
+
+  </header>
 
 
-<section class="hero" id="inicio">
-  <div class="hero-content">
 
-    <span class="hero-tag">Geociências • Hidrogeografia • Recursos Hídricos • Geotecnologias</span>
+  <!-- =========================
+       ABERTURA
+       ========================= -->
 
-    <h1>Prof. Dr. Maurício Moreira dos Santos</h1>
+  <section
+    class="hero"
+    id="inicio">
 
-    <h2>
-      Professor Associado da Universidade Tecnológica Federal do Paraná (UTFPR), Campus Londrina.
-      Professor e pesquisador convidado do Programa de Pós-Graduação em Geografia da Universidade Estadual de Londrina (UEL).
-      Doutor em Geociências e Meio Ambiente - UNESP.
-    </h2>
-
-    <p>
-      Página acadêmica destinada à divulgação de projetos de pesquisa,
-      resultados científicos, publicações e atividades relacionadas aos estudos:
-      análise ambiental, hidrogeografia, recursos hídricos e geotecnologias.
-    </p>
-
-    <a href="#projetos" class="button">
-      Conheça os projetos
-    </a>
-
-    <a href="#sobre" class="button secondary">
-      Sobre o pesquisador
-    </a>
-
-  </div>
-</section>
+    <div class="hero-content">
 
 
-<section class="about" id="sobre">
-  <div class="container">
+      <div class="hero-text">
 
-    <h2 class="section-title">Pesquisa e atuação acadêmica</h2>
+        <span class="hero-tag">
 
-    <p class="section-subtitle">
-      Integração entre geociências, recursos hídricos e análise ambiental.
-    </p>
+          Pesquisa • Geociências • Recursos Hídricos
 
-    <p>
-      Docente e pesquisador com atuação nas áreas de hidrogeografia,
-      águas subterrâneas, geociências aplicada à Engenharia Ambiental e Geografia,
-      geotecnologias e gestão dos recursos hídricos.
-    </p>
+        </span>
 
-    <p>
-      As pesquisas desenvolvidas buscam integrar levantamentos de campo,
-      bancos de dados hidrogeológicos, geotecnologias, análise espacial
-      e indicadores ambientais para apoiar a compreensão e a gestão
-      sustentável dos recursos naturais.
-    </p>
 
-    <div class="research-areas">
-      <span class="tag">Hidrogeologia</span>
-      <span class="tag">Águas subterrâneas</span>
-      <span class="tag">Geologia ambiental</span>
-      <span class="tag">Geotecnia</span>
-      <span class="tag">Recursos hídricos</span>
-      <span class="tag">SIG e geotecnologias</span>
-      <span class="tag">Vulnerabilidade ambiental</span>
+        <h1>
+
+          Prof. Dr. Maurício Moreira dos Santos
+
+        </h1>
+
+
+        <h2>
+
+          Geociências • Hidrogeografia • Recursos Hídricos • Geotecnologias
+
+        </h2>
+
+
+        <p>
+
+          Professor Associado da Universidade Tecnológica Federal do Paraná
+          (UTFPR), Campus Londrina, e professor pesquisador convidado do
+          Programa de Pós-Graduação em Geografia da Universidade Estadual de
+          Londrina (UEL). Graduado em Geografia pela UEL, mestre e doutor em
+          Geociências e Meio Ambiente pela UNESP. Atua nas áreas de análise
+          ambiental, hidrogeografia, recursos hídricos e geotecnologias.
+
+        </p>
+
+
+        <a
+          href="#projetos"
+          class="button">
+
+          Conheça os projetos
+
+        </a>
+
+
+        <a
+          href="#sobre"
+          class="button secondary">
+
+          Sobre o pesquisador
+
+        </a>
+
+      </div>
+
+
+
+      <div class="hero-photo">
+
+        <img
+          src="IMG_20150530_192400.jpg"
+          alt="Prof. Maurício Moreira dos Santos em atividade de campo">
+
+      </div>
+
+
     </div>
 
-  </div>
-</section>
+  </section>
 
 
-<section class="projects" id="projetos">
-  <div class="container">
 
-    <h2 class="section-title">Projetos de pesquisa</h2>
+  <!-- =========================
+       SOBRE
+       ========================= -->
 
-    <p class="section-subtitle">
-      Projetos em desenvolvimento e linhas de investigação associadas.
-    </p>
+  <section
+    class="about"
+    id="sobre">
 
-    <div class="project-grid">
-
-      <article class="card">
-
-        <span class="card-status">Em andamento • 2026–2029</span>
-
-        <h3>
-          Sistema Aquífero Serra Geral Norte (SASG-N)
-        </h3>
-
-        <p>
-          <strong>Avaliação Integrada das Potencialidades Hídricas e da
-          Sustentabilidade das Águas Subterrâneas.</strong>
-        </p>
-
-        <p>
-          Pesquisa voltada à avaliação do uso atual e potencial das águas
-          subterrâneas do Sistema Aquífero Serra Geral no norte do Paraná,
-          utilizando informações hidrogeológicas, hidroquímicas,
-          socioeconômicas e análise espacial em ambiente SIG.
-        </p>
-
-      </article>
+    <div class="container">
 
 
-      <article class="card">
+      <h2 class="section-title">
 
-        <span class="card-status">Pesquisa hidrogeomorfológica</span>
+        Pesquisa e atuação acadêmica
 
-        <h3>
-          Modelo hidrogeomorfológico e comportamento aquífero
-        </h3>
-
-        <p>
-          Investigação das relações entre relevo, dinâmica das águas
-          subterrâneas, recarga, potenciometria e funcionamento dos aquíferos
-          em bacias intermontanas.
-        </p>
-
-        <p>
-          O projeto integra dados de poços, características geomorfológicas,
-          hidrodinâmica aquífera e modelos conceituais hidrogeológicos.
-        </p>
-
-      </article>
+      </h2>
 
 
-      <article class="card">
+      <p class="section-subtitle">
 
-        <span class="card-status">Linha de pesquisa</span>
+        Integração entre geociências, recursos hídricos,
+        análise ambiental e geotecnologias.
 
-        <h3>
-          Vulnerabilidade e gestão das águas subterrâneas
-        </h3>
-
-        <p>
-          Estudos voltados à avaliação da vulnerabilidade aquífera,
-          qualidade das águas subterrâneas, riscos ambientais e relações
-          entre disponibilidade hídrica, uso do território e saúde ambiental.
-        </p>
-
-      </article>
-
-    </div>
-  </div>
-</section>
-
-
-<section class="institution" id="instituicoes">
-  <div class="container">
-
-    <h2 class="section-title">Instituições e parcerias</h2>
-
-    <p class="section-subtitle">
-      Cooperação acadêmica e técnico-científica para o desenvolvimento
-      das pesquisas.
-    </p>
-
-    <div class="institution-box">
-
-      <p><strong>Universidade Tecnológica Federal do Paraná — UTFPR</strong></p>
-
-      <p>
-        Desenvolvimento de pesquisas em colaboração com universidades,
-        instituições públicas, pesquisadores, estudantes e órgãos relacionados
-        à gestão ambiental e de recursos hídricos.
       </p>
 
+
+      <p>
+
+        A atuação acadêmica e científica envolve estudos relacionados à
+        hidrogeografia, hidrogeologia, recursos hídricos, análise ambiental,
+        geologia aplicada e geotecnologias.
+
+      </p>
+
+
+      <p>
+
+        As pesquisas buscam integrar levantamentos de campo, bancos de dados,
+        análise espacial, sistemas de informações geográficas e indicadores
+        ambientais para a compreensão dos processos naturais e para o apoio
+        ao planejamento e à gestão sustentável dos recursos hídricos e
+        ambientais.
+
+      </p>
+
+
+      <div class="research-areas">
+
+        <span class="tag">
+          Hidrogeografia
+        </span>
+
+        <span class="tag">
+          Hidrogeologia
+        </span>
+
+        <span class="tag">
+          Águas subterrâneas
+        </span>
+
+        <span class="tag">
+          Recursos hídricos
+        </span>
+
+        <span class="tag">
+          Análise ambiental
+        </span>
+
+        <span class="tag">
+          Geotecnologias
+        </span>
+
+        <span class="tag">
+          SIG
+        </span>
+
+        <span class="tag">
+          Vulnerabilidade ambiental
+        </span>
+
+      </div>
+
     </div>
 
-  </div>
-</section>
+  </section>
 
 
-<section class="contact" id="contato">
-  <div class="container">
 
-    <h2 class="section-title">Contato e produção científica</h2>
+  <!-- =========================
+       PROJETOS
+       ========================= -->
 
-    <p class="section-subtitle">
-      Informações acadêmicas, publicações e colaboração em pesquisa.
-    </p>
+  <section
+    class="projects"
+    id="projetos">
 
-    <p>
-      Prof. Maurício Moreira dos Santos
-    </p>
-
-    <p>
-      Universidade Tecnológica Federal do Paraná — UTFPR
-    </p>
-
-  </div>
-</section>
+    <div class="container">
 
 
-<footer>
-  © 2026 Maurício Moreira dos Santos • Página acadêmica de pesquisa
-</footer>
+      <h2 class="section-title">
+
+        Projetos de pesquisa
+
+      </h2>
+
+
+      <p class="section-subtitle">
+
+        Projetos em desenvolvimento e principais
+        linhas de investigação associadas.
+
+      </p>
+
+
+
+      <div class="project-grid">
+
+
+        <article class="card">
+
+
+          <span class="card-status">
+
+            Em andamento • 2026–2029
+
+          </span>
+
+
+          <h3>
+
+            Sistema Aquífero Serra Geral Norte (SASG-N)
+
+          </h3>
+
+
+          <p>
+
+            <strong>
+              Avaliação Integrada das Potencialidades Hídricas
+              e da Sustentabilidade das Águas Subterrâneas.
+            </strong>
+
+          </p>
+
+
+          <p>
+
+            Pesquisa voltada à avaliação do uso atual e potencial das águas
+            subterrâneas do Sistema Aquífero Serra Geral no norte do Paraná,
+            integrando informações hidrogeológicas, hidroquímicas,
+            socioeconômicas e análise espacial em ambiente SIG.
+
+          </p>
+
+
+        </article>
+
+
+
+        <article class="card">
+
+
+          <span class="card-status">
+
+            Pesquisa hidrogeomorfológica
+
+          </span>
+
+
+          <h3>
+
+            Modelo hidrogeomorfológico e comportamento aquífero
+
+          </h3>
+
+
+          <p>
+
+            Investigação das relações entre relevo, dinâmica das águas
+            subterrâneas, recarga, potenciometria e funcionamento dos
+            aquíferos em bacias intermontanas.
+
+          </p>
+
+
+          <p>
+
+            O estudo integra dados de poços, características geomorfológicas,
+            hidrodinâmica aquífera e modelos conceituais hidrogeológicos.
+
+          </p>
+
+
+        </article>
+
+
+
+        <article class="card">
+
+
+          <span class="card-status">
+
+            Linha de pesquisa
+
+          </span>
+
+
+          <h3>
+
+            Vulnerabilidade e gestão das águas subterrâneas
+
+          </h3>
+
+
+          <p>
+
+            Estudos voltados à avaliação da vulnerabilidade aquífera,
+            qualidade das águas subterrâneas, riscos ambientais e relações
+            entre disponibilidade hídrica, uso do território e saúde
+            ambiental.
+
+          </p>
+
+
+        </article>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================
+       INSTITUIÇÕES E PARCERIAS
+       ========================= -->
+
+  <section
+    class="institution"
+    id="instituicoes">
+
+    <div class="container">
+
+
+      <h2 class="section-title">
+
+        Instituições e parcerias
+
+      </h2>
+
+
+      <p class="section-subtitle">
+
+        Cooperação acadêmica e técnico-científica
+        para o desenvolvimento das pesquisas.
+
+      </p>
+
+
+      <div class="institution-box">
+
+
+        <p>
+
+          <strong>
+            Universidade Tecnológica Federal do Paraná — UTFPR
+          </strong>
+
+        </p>
+
+
+        <p>
+
+          <strong>
+            Universidade Estadual de Londrina — UEL
+          </strong>
+
+        </p>
+
+
+        <p>
+
+          Desenvolvimento de pesquisas em colaboração com universidades,
+          instituições públicas, pesquisadores, estudantes e órgãos
+          relacionados à gestão ambiental e de recursos hídricos.
+
+        </p>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================
+       CONTATO
+       ========================= -->
+
+  <section
+    class="contact"
+    id="contato">
+
+    <div class="container">
+
+
+      <h2 class="section-title">
+
+        Contato e produção científica
+
+      </h2>
+
+
+      <p class="section-subtitle">
+
+        Informações acadêmicas, publicações e
+        colaboração em pesquisa.
+
+      </p>
+
+
+      <p>
+
+        <strong>
+          Prof. Dr. Maurício Moreira dos Santos
+        </strong>
+
+      </p>
+
+
+      <p>
+
+        Universidade Tecnológica Federal do Paraná — UTFPR
+
+      </p>
+
+
+      <p>
+
+        Campus Londrina
+
+      </p>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================
+       RODAPÉ
+       ========================= -->
+
+  <footer>
+
+    © 2026 Maurício Moreira dos Santos
+    • Página acadêmica de pesquisa
+
+  </footer>
+
 
 </body>
+
 </html>
